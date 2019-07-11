@@ -1,7 +1,0 @@
----
-
-- include: register.yml
-  tags: [register]
-
-- include: repos.yml
-  tags: [repos]
