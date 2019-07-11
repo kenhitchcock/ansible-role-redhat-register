@@ -2,8 +2,10 @@
 
 - name: "Register Systems with Satellite or CDN"
   include_tasks: register.yml
+  become: yes
   tags: [register]
 
 - name: "Enable and disable Repositories"
   include_tasks: repos.yml
+  become: yes
   tags: [repos]
