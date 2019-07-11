@@ -1,0 +1,21 @@
+---
+- name: Register with Red Hat
+  redhat_subscription:
+    state: present
+    activationkey: "{{ rh_ak }}"
+    org_id: "{{ rh_orgid }}"
+    force_register: "{{ rh_forceregister }}" 
+  when: 
+    - rh_forceregister != "no"
+    - rh_ak is defined
+
+- name: Register with Red Hat
+  redhat_subscription:
+    state: present
+    username: "{{ rh_username }}"
+    password: "{{ rh_password }}"
+    org_id: "{{ rh_orgid }}"
+    force_register: "{{ rh_forceregister }}"
+  when: 
+    - rh_forceregister != "no"
+    - rh_ak is not defined

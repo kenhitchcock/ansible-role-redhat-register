@@ -1,0 +1,15 @@
+---
+
+- name: Disable all RHSM repositories
+  rhsm_repository:
+    name: '*'
+    state: disabled
+  when: 'rh_forceregister != "no"'
+
+- name: Enable all repositories required for lab
+  rhsm_repository:
+    name: "{{ item.key }}"
+    state: enabled
+  with_dict: "{{ rhsm_repos }}"
+  when: 'rh_forceregister != "no"'
+
