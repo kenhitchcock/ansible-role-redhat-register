@@ -1,0 +1,9 @@
+---
+
+- name: Disable all RHSM repositories
+  yum:
+    name: "{{ rh_satpkg }}"
+    state: present
+  when: 
+    - 'rh_forceregister != "no"'
+    - 'rh_usesat == "yes"'

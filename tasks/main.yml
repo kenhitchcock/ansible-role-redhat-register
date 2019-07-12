@@ -7,4 +7,8 @@
     - name: "Enable and disable Repositories"
       include_tasks: repos.yml
       tags: [repos]
+
+    - name: "Install packages required by satellite"
+      include_tasks: packages.yml
+      tags: [pkgs]
   become: true 
