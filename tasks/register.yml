@@ -1,5 +1,14 @@
 ---
-- name: Register with Red Hat
+
+- name: "Install Satellite or Capsule RPM"
+  yum:
+    name: "https://{{ rh_satserver }}/{{ rh_satserver_rpm_path }}" 
+    state: present
+  when:
+    - rh_usesat == "yes"
+    - rh_satserver is defined
+
+- name: "Register with Red Hat"
   redhat_subscription:
     state: present
     activationkey: "{{ rh_ak }}"

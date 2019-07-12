@@ -31,6 +31,13 @@ Available variables are listed below, along with default values (see defaults/ma
     # Currently supports yes or no
     rh_forceregister:
 
+    # Satellite server variables
+    # currently accepts yes and no
+    rh_usesat: no
+    rh_satserver:
+    # Default value is set for this but useful if anything changes with satellite.
+    rh_satserver_rpm_path:
+
 Future Releases
 ---------------
 

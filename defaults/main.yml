@@ -1,2 +1,7 @@
 ---
 # default values for role
+#
+
+rh_usesat: no
+rh_satserver_rpm_path: "pub/katello-ca-consumer-latest.noarch.rpm"
+rh_satserver:
