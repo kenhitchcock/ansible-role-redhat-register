@@ -1,8 +1,17 @@
 ---
 
+- name: "Download Satellite or Capsule RPM"
+  get_url:
+    url: "https://{{ rh_satserver }}/{{ rh_satserver_rpm_path }}"
+    dest: "{{ rh_workingdir }}/{{ rh_rpmname }}"
+    mode: '0740'
+  when:
+    - rh_usesat == "yes"
+    - rh_satserver is defined
+
 - name: "Install Satellite or Capsule RPM"
   yum:
-    name: "https://{{ rh_satserver }}/{{ rh_satserver_rpm_path }}" 
+    name: "{{ rh_workingdir }}/{{ rh_rpmname }}" 
     state: present
   when:
     - rh_usesat == "yes"
