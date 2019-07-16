@@ -18,7 +18,7 @@
     - rh_usesat == "yes"
     - rh_satserver is defined
 
-- name: "Register with Red Hat"
+- name: "Register with Red Hat using activation key."
   redhat_subscription:
     state: present
     activationkey: "{{ rh_ak }}"
@@ -28,7 +28,7 @@
     - rh_forceregister != "no"
     - rh_ak is defined
 
-- name: Register with Red Hat
+- name: "Register with Red Hat using credentials."
   redhat_subscription:
     state: present
     username: "{{ rh_username }}"
