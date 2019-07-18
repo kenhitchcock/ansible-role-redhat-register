@@ -1,6 +1,6 @@
 ---
 
-- name: Disable all RHSM repositories
+- name: "Install Packages required for satellite clients." 
   yum:
     name: "{{ rh_satpkgs }}"
     state: present
