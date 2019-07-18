@@ -3,7 +3,7 @@
 #
 
 rh_usesat: no
-rh_satserver_rpm_path: "pub/katello-ca-consumer-latest.noarch.rpm"
+rh_satserver_rpm_path: "pub"
 rh_workingdir: "/root/"
 rh_rpmname: "katello-ca-consumer-latest.noarch.rpm"
 rh_satserver:

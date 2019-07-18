@@ -36,7 +36,10 @@ Available variables are listed below, along with default values (see defaults/ma
     rh_usesat: no
     rh_satserver:
     # Default value is set for this but useful if anything changes with satellite.
-    rh_satserver_rpm_path:
+    rh_satserver_rpm_path: pub
+    # Name of the RPM file that will be used to install satellite certificates and 
+    # configuration required for satellite client registration. Default valu
+    rh_rpmname: katello-ca-consumer-latest.noarch.rpm 
 
 Future Releases
 ---------------

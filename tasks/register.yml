@@ -2,21 +2,23 @@
 
 - name: "Download Satellite or Capsule RPM"
   get_url:
-    url: "https://{{ rh_satserver }}/{{ rh_satserver_rpm_path }}"
+    url: "https://{{ rh_satserver }}/{{ rh_satserver_rpm_path }}/{{ rh_rpmname }}"
     validate_certs: no
     dest: "{{ rh_workingdir }}/{{ rh_rpmname }}"
     mode: '0740'
   when:
-    - rh_usesat == "yes"
+    - rh_usesat != 'no'
     - rh_satserver is defined
+    - rh_satserver != '' 
 
 - name: "Install Satellite or Capsule RPM"
   yum:
     name: "{{ rh_workingdir }}/{{ rh_rpmname }}" 
     state: present
   when:
-    - rh_usesat == "yes"
+    - rh_usesat != 'no'
     - rh_satserver is defined
+    - rh_satserver != '' 
 
 - name: "Register with Red Hat using activation key."
   redhat_subscription:
