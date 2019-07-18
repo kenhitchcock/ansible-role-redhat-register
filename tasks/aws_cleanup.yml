@@ -14,11 +14,12 @@
         warn: no
 
     - name: "Update pluginconf.d/product-id.conf"
-      command: |
-              cat << EOF > /etc/yum/pluginconf.d/product-id.conf
-              [main]
-              enabled=1
-              EOF
+      copy:
+        src: "files/product-id.conf"
+        dest: /etc/yum/pluginconf.d/product-id.conf
+        owner: root
+        group: root
+        mode: '0644'
 
   when:
     - 'rh_forceregister != "no"'
