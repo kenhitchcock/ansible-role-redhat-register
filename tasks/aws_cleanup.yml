@@ -1,0 +1,28 @@
+---
+
+
+- name: "Clean up AWS amazon instance if using satellite"
+  block:
+    - name: "Remove amazon packages"
+      yum:
+        name: 'rh-amazon-rhui-client*'
+        state: absent
+
+    - name: "yum clean all"
+      command: yum clean all
+      args:
+        warn: no
+
+    - name: "Update pluginconf.d/product-id.conf"
+      command: |
+              cat << EOF > /etc/yum/pluginconf.d/product-id.conf
+              [main]
+              enabled=1
+              EOF
+
+  when:
+    - 'rh_forceregister != "no"'
+    - 'rh_usesat == "yes"'
+    - 'rh_useaws == "yes"'
+
+
