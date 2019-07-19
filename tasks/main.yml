@@ -8,11 +8,11 @@
       include_tasks: repos.yml
       tags: [repos]
 
-    - name: "Install packages required by satellite"
-      include_tasks: packages.yml
-      tags: [pkgs]
-
     - name: "Clean up AWS instance if using aws."
       include_tasks: aws_cleanup.yml
       tags: [aws]
+
+    - name: "Install packages required by satellite"
+      include_tasks: packages.yml
+      tags: [pkgs]
   become: true 
