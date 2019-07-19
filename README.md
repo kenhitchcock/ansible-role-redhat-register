@@ -41,6 +41,9 @@ Available variables are listed below, along with default values (see defaults/ma
     # configuration required for satellite client registration. Default valu
     rh_rpmname: katello-ca-consumer-latest.noarch.rpm 
 
+    # If using AWS and registering to a Red Hat capsule set the following to clean up aws stuff.
+    rh_useaws: yes
+
 Future Releases
 ---------------
 
