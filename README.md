@@ -26,7 +26,7 @@ Available variables are listed below, along with default values (see defaults/ma
     # This can be found in your Red Hat online portal.
     # Or if using satellite this will be in the Organizations section. 
     # First organization is normally 1
-    rh_org:
+    rh_orgid:
 
     # Currently supports yes or no
     rh_forceregister:
